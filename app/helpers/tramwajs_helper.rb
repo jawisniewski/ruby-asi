@@ -1,0 +1,2 @@
+module TramwajsHelper
+end

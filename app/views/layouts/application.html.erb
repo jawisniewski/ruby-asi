@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tramwaje</title>
+	<%= csrf_meta_tags %>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<%= link_to 'Tramwaje', tramwajs_path, { :class=>"navbar-brand" } %>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="#">Link</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<% if current_user %>
+	            		<li><a><%= current_user.email %></a></li>
+		            	<li><%= link_to "Wyloguj", logout_path %></li>
+		            <% else %>
+						<li><%= link_to "Rejestracja", signup_path %></li>
+		            	<li><%= link_to "Logowanie", login_path %></li>
+					<% end %>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container -->
+	</nav>
+
+	<div class="container">
+
+		<div class="col-sm-3">
+			<div class="panel panel-default" style="margin-top: 20px;">
+				<div class="panel-heading">Zarządzaj</div>
+				<ul class="nav nav-pills nav-stacked" style="margin: 0">
+					<li role="presentation"><%= link_to 'Dodaj tramwaj', new_tramwaj_path %></li>
+					<li role="presentation"><%= link_to 'Wszystkie tramwaje', tramwajs_path %></li>
+					
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="col-sm-9 padding-top">
+			<%= yield %>
+		</div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<h2>Logowanie</h2>
+<hr>
+
+
+<form method="post" action="/sessions">
+    <div class="form-horizontal">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div class="form-group">
+            <div class="col-md-3 text-right margin-top">
+                Adres e-mail
+            </div>
+
+            <div class="col-md-9">
+                <%= text_field_tag :email, params[:email], class: "form-control label-form"%>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-3 text-right margin-top">
+                Hasło
+            </div>
+            <div class="col-md-9">
+                <%= password_field_tag :password %>
+                <!-- <input class="form-control label-form"" id="password" name="password" type="password" /> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-9">
+                <%= submit_tag "Zaloguj" %>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,2 @@
+class Tramwaj < ApplicationRecord
+end

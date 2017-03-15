@@ -1,0 +1,50 @@
+<%= form_for(tramwaj) do |f| %>
+<% if tramwaj.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(tramwaj.errors.count, "error") %> prohibited this tramwaj from being saved:</h2>
+
+  <ul>
+    <% tramwaj.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="form-horizontal">
+  <div class="form-group">
+    <div class="col-md-2">
+      <%= f.label :nazwa %>
+    </div>
+    <div class="col-md-10">
+      <%= f.text_field :nazwa, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-2">
+      <%= f.label :rok_produkcji %>
+    </div>
+    <div class="col-md-10">
+      <%= f.text_field :rok_produkcji, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-2">
+      <%= f.label :opis %>
+    </div>
+    <div class="col-md-10">
+      <%= f.text_area :opis, class: "form-control", rows: 8 %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <div class="actions">
+      <%= f.submit :Zapisz %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

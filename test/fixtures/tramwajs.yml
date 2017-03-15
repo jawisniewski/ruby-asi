@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nazwa: MyText
+  rok_produkcji: 
+  opis: MyText
+
+two:
+  nazwa: MyText
+  rok_produkcji: 
+  opis: MyText

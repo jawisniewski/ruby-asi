@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Wszystkie tramwaje</h2>
+<hr>
+
+<% @tramwajs.each do |tramwaj| %>
+
+<div class="text-justify">
+  <h4><%= tramwaj.nazwa %></h4>
+  <h6>Rok produkcji: <b><%= tramwaj.rok_produkcji %></b></h6>
+  <%= tramwaj.opis %>
+</div>
+<br>
+<div class="text-right">
+  <%= link_to 'Wyświetl', tramwaj %> |
+  <%= link_to 'Edytuj', edit_tramwaj_path(tramwaj) %> |
+  <%= link_to 'Usuń', tramwaj, method: :delete, data: { confirm: 'Czy na pewno usunąć?' } %>
+</div>
+<hr/>
+
+<% end %>

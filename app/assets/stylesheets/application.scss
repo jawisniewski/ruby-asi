@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+/* BOOTSTRAP OVERLOAD */
+
+body {
+	padding-top: 70px;
+}
+
+.navbar {
+    min-height: 60px;
+}
+
+.navbar-default {
+    padding-top: 5px;
+}
+
+hr {
+    border-style: dashed;
+    border-color: #dedede;
+}
+input,
+select,
+textarea {
+    max-width: 500px;
+}
+
+@media (max-width: 991px) {
+    input, select, textarea {
+        max-width: 420px;
+    }
+}
+
+.margin-top {
+	margin-top: 12px;
+}
+
+.padding-top {
+    padding-top: 20px;
+}
+
+.label-form {
+	max-width: 300px;
+	height: 45px;
+}
+
+.field_with_errors {
+    display: ruby-base;
+    margin: -2px;
+    padding: 2px;
+}
+@media (max-width: 991px) {
+.text-right {
+    text-align: left;
+}
+}

@@ -1,14 +1,24 @@
-# ruby-asi
+# README
 
-### Aleksandra Tejszerska (zaliczenie) 
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-- [ ] [tu będzie link](/)
+Things you may want to cover:
 
-Użyto:
+* Ruby version
 
-* Ruby (wersja ~> 2.4.0)
-* Rails (tylko wersje ~> 5.0.2)
-<!--* baza danych-->
+* System dependencies
 
-<!--Dodatkowo należy napisać (wystarczy jeden akapit) jaki problem rozwiązuje aplikacja
-i z jakich (niestandardowych) gemów skorzystano (lista, do czego użyto).-->
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
