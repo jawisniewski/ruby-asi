@@ -1,8 +1,5 @@
 ## Aleksandra Tejszerska (zaliczenie) 
 
-- [ ] [tu będzie link](/)
-
-
 * Ruby 2.4.0
 * Rails 5.0.2
 * SQLite3
