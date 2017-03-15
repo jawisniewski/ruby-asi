@@ -14,8 +14,8 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 /* BOOTSTRAP OVERLOAD */
 
@@ -69,4 +69,33 @@ textarea {
 .text-right {
     text-align: left;
 }
+}
+
+.navbar-nav > li {
+    padding: 15px 10px;
+    line-height: 20px;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav > li > a {
+        padding: 0 0;
+    }
+}
+
+p, ol, ul, td {
+    font-size: 14px;
+}
+
+.navbar-brand {
+    font-size: 21px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:focus {
+    color: #179386;
+    text-shadow: 0 0 3px #BFEFF5;
+}
+
+.navbar-nav {
+    margin: 1px;
 }

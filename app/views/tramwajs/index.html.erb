@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Wszystkie tramwaje</h2>
+<h2><%= t('all-trams') %></h2>
 <hr>
 
 <% @tramwajs.each do |tramwaj| %>
@@ -11,11 +11,15 @@
   <%= tramwaj.opis %>
 </div>
 <br>
-<div class="text-right">
-  <%= link_to 'Wyświetl', tramwaj %> |
-  <%= link_to 'Edytuj', edit_tramwaj_path(tramwaj) %> |
-  <%= link_to 'Usuń', tramwaj, method: :delete, data: { confirm: 'Czy na pewno usunąć?' } %>
-</div>
+
+<% if current_user %>
+	<div class="text-right">
+  		<%= link_to t('details'), tramwaj %> |
+  		<%= link_to t('edit'), edit_tramwaj_path(tramwaj) %> |
+  		<%= link_to t('delete'), tramwaj, method: :delete, data: { confirm: 'Czy na pewno usunąć?' } %>
+	</div>
+<% end %>
+
 <hr/>
 
 <% end %>

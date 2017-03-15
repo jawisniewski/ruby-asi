@@ -1,23 +1,44 @@
 class UsersController < ApplicationController
-respond_to :html, :json
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  # GET /users
+  # GET /users.json
+  def index
+    @users = User.all
+  end
+
+  # GET /users/1
+  # GET /users/1.json
+  def show
+  end
+
+  # GET /users/new
   def new
-    @user = User.new    
+    @user = User.new
+  end
+
+  # GET /users/1/edit
+  def edit
   end
 
   def create
-    @user = User.new(user_params)   
+    @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user_id
-      redirect_to root_url, notice: "Konto utworzone pomyślnie"
+      session[:user_id] = @user.id
+      redirect_to root_url, notice: 'Konto utworzono pomyślnie.'
     else
-      render "new"
+      render :new
     end
   end
-  
+
   private
-  
-  def user_params
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
     end
 end

@@ -19,22 +19,17 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<%= link_to 'Tramwaje', tramwajs_path, { :class=>"navbar-brand" } %>
+				<%= link_to t('trams'), tramwajs_path, { :class=>"navbar-brand" } %>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="#">Link</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<% if current_user %>
-	            		<li><a><%= current_user.email %></a></li>
-		            	<li><%= link_to "Wyloguj", logout_path %></li>
-		            <% else %>
-						<li><%= link_to "Rejestracja", signup_path %></li>
-		            	<li><%= link_to "Logowanie", login_path %></li>
-					<% end %>
+
+				<ul class="nav navbar-nav navbar-right">	
+
+					<li><%= link_to_unless_current "EN", locale: "en" %></li>
+					<li><%= link_to_unless_current "PL", locale: "pl" %></li>
+
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container -->
@@ -43,11 +38,36 @@
 	<div class="container">
 
 		<div class="col-sm-3">
+
+			<div class="panel panel-default" style="margin-top: 20px;">
+				<div class="panel-heading">
+				<% if current_user %>
+						<%= t('hello') %> <%= current_user.email %>!
+					<% else %>
+						Załóż konto
+					<% end %>
+
+				</div>
+				<ul class="nav nav-pills nav-stacked" style="margin: 0">
+
+					<% if current_user %>
+						<li role="presentation"><%= link_to t('logout'), logout_path %></li>
+					<% else %>
+						<li role="presentation"><%= link_to t('login'), login_path %></li>
+						<li role="presentation"><%= link_to t('signup'), signup_path %></li>
+					<% end %>
+
+				</ul>
+			</div>
+
+
 			<div class="panel panel-default" style="margin-top: 20px;">
 				<div class="panel-heading">Zarządzaj</div>
 				<ul class="nav nav-pills nav-stacked" style="margin: 0">
-					<li role="presentation"><%= link_to 'Dodaj tramwaj', new_tramwaj_path %></li>
-					<li role="presentation"><%= link_to 'Wszystkie tramwaje', tramwajs_path %></li>
+					<% if current_user %>
+						<li role="presentation"><%= link_to t('add-tram'), new_tramwaj_path %></li>
+					<% end %>
+					<li role="presentation"><%= link_to t('all-trams'), tramwajs_path %></li>
 					
 				</ul>
 			</div>

@@ -42,7 +42,7 @@ class TramwajsController < ApplicationController
   def update
     respond_to do |format|
       if @tramwaj.update(tramwaj_params)
-        format.html { redirect_to @tramwaj, notice: 'Tramwaj zaktualizowano.' }
+        format.html { redirect_to @tramwaj, notice: 'Tramwaj edytowano.' }
         format.json { render :show, status: :ok, location: @tramwaj }
       else
         format.html { render :edit }
