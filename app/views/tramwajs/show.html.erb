@@ -6,6 +6,6 @@
 <div class="text-justify">
   <h4><b>Nazwa:</b> <%= @tramwaj.nazwa %></h4>
   <h6><b>Rok produkcji:</b> <%= @tramwaj.rok_produkcji %></h6>
-  <b>Opis:</b> <%= @tramwaj.opis %>
+  <b>Opis:</b> <%= markdown(@tramwaj.opis) %>
 </div>
 <br>

@@ -5,21 +5,21 @@
 
 <% @tramwajs.each do |tramwaj| %>
 
-<div class="text-justify">
-  <h4><%= tramwaj.nazwa %></h4>
-  <h6>Rok produkcji: <b><%= tramwaj.rok_produkcji %></b></h6>
-  <%= tramwaj.opis %>
-</div>
-<br>
-
-<% if current_user %>
-	<div class="text-right">
-  		<%= link_to t('details'), tramwaj %> |
-  		<%= link_to t('edit'), edit_tramwaj_path(tramwaj) %> |
-  		<%= link_to t('delete'), tramwaj, method: :delete, data: { confirm: 'Czy na pewno usunąć?' } %>
+	<div class="text-justify">
+  		<h4><%= tramwaj.nazwa %></h4>
+  		<h6>Rok produkcji: <b><%= tramwaj.rok_produkcji %></b></h6>
+  		<%= markdown(tramwaj.opis) %>
 	</div>
-<% end %>
+	<br>
 
-<hr/>
+	<% if current_user %>
+		<div class="text-right">
+  			<%= link_to t('details'), tramwaj %> |
+  			<%= link_to t('edit'), edit_tramwaj_path(tramwaj) %> |
+  			<%= link_to t('delete'), tramwaj, method: :delete, data: { confirm: 'Czy na pewno usunąć?' } %>
+		</div>
+	<% end %>
+
+	<hr/>
 
 <% end %>
