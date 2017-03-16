@@ -25,4 +25,5 @@
 <h2>Dodatkowe gemy</h2>
 
 <strong>bcrypt</strong> - szyfrowanie haseł<br>
-<strong>rails-i18n</strong> - tłumaczenie tekstu
+<strong>rails-i18n</strong> - tłumaczenie tekstu<br>
+<strong>redcarpet</strong> - znaczniki html w tekście
