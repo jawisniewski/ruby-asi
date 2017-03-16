@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
+  scope ":locale" do
 
-  
-  get 'login', to: 'sessions#new', as: 'login'
-	get 'logout', to: 'sessions#destroy', as: 'logout'
-   	get 'signup', to: 'users#new', as: 'signup'
-  	
+   	resources :sessions, only: [:new, :create, :destroy]
+  	get 'signup', to: 'users#new', as: 'signup'
+  	get 'login', to: 'sessions#new', as: 'login'
+  	get 'logout', to: 'sessions#destroy', as: 'logout'
+  	resources :users
+  	resources :tramwajs
 
-  resources :tramwajs
-  resources :users
-  resources :sessions
+  	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  end
 
-  get 'tramwajs/index'
-  root 'tramwajs#index'
-  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    get 'tramwajs/index'
+  	root 'tramwajs#index'
+
 end

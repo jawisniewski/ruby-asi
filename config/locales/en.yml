@@ -20,4 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hello"
+  logout: "Log out"
+  login: "Log in"
+  signup: "Sign up"
+  trams: "Trams"
+  pass: "Password"
+  conf_pass: "Confirm password"  
+  register: "Register"
+  details: "Details"
+  edit: "Edit"
+  delete: "Delete"
+  log-in: "Logged in!"
+  log-out: "Logged out!"
+  create-account: "Create"
+  error-log: "Invalid email or/and password"
+  save: "Save"
+  add-tram: "Create tram"
+  all-trams: "All trams"
