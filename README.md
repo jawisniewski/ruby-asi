@@ -1,5 +1,7 @@
 <h1>Aleksandra Tejszerska (zaliczenie)</h1>
 
+- [Tramwaje w Gdańsku](https://tramwaje-gdansk.herokuapp.com/)
+
 <table>
   <tr>
     <th>Ruby</th>
@@ -10,7 +12,7 @@
   <tr>
     <td>2.4.0</td>
     <td>5.0.2</td>
-    <td>SQLite3</td>
+    <td>SQLite3 (lokalnie), postgresql (heroku)</td>
     <td>bootstrap</td>
   </tr>
 </table>
