@@ -26,6 +26,4 @@
 
 <strong>bcrypt</strong> - szyfrowanie haseł<br>
 <strong>rails-i18n</strong> - tłumaczenie tekstu<br>
-<strong>ckeditor</strong> - formatowanie tekstu<br>
-<strong>redcarpet</strong> - znaczniki html w tekście<br>
-<strong>paperclip</strong> - wysyłanie obrazków
+<strong>redcarpet</strong> - znaczniki html w tekście
